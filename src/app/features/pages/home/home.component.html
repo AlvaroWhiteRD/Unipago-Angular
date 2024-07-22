@@ -1,0 +1,59 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <app-luffy />
+      <h1>{{ title }}</h1>
+      <p>
+        Bienvenido a tu lugar de animes donde <br />podras crear tu propia lista
+        de animes favoritos. 🎉
+      </p>
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="right-side">
+      <div class="pill-group">
+        <a class="pill" routerLink="/favorites-animes" rel="noopener">
+          <span>Mis Animes favoritos</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="14"
+            viewBox="0 -960 960 960"
+            width="14"
+            fill="currentColor"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+            />
+          </svg>
+        </a>
+        <button class="pill" (click)="open(content)" rel="noopener">
+          <span>Agregar Nuevo Anime</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="14"
+            viewBox="0 -960 960 960"
+            width="14"
+            fill="currentColor"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Agregar nuevo anime</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-add (save)="c('Save click')" (cancel)="d('Cross click')"></app-add>
+  </div>
+</ng-template>

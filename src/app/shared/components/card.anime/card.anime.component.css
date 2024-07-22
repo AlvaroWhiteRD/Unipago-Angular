@@ -1,0 +1,94 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .card {
+    max-width: 400px;
+    height: 300px;
+    border-radius: 12px;
+    position: relative;
+    margin: 50px auto;
+    border: 1px solid;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: #494444;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: all 500ms;
+  }
+  .title,
+  .btn,
+  .desc,
+  .anime-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 500ms;
+  }
+  .title {
+    font-size: 1.2em;
+    z-index: 2;
+  }
+  .desc {
+    top: 60px;
+    left: 100%;
+    padding: 10px;
+    z-index: 2;
+  }
+  .anime-img {
+    object-fit: cover;
+    border-radius: inherit;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+  }
+  .btn {
+    top: 100%;
+    z-index: 2;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+  .card:hover .btn {
+    top: 90%;
+  }
+  .card:hover .desc {
+    left: 0%;
+  }
+  .card:hover .anime-img {
+    height: 400%;
+    width: 400%;
+    opacity: 0;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 3; 
+  }
+  
+  .btn-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 18px;
+   
+  }
+  
+  .btn-action:hover {
+    color: #0056b3;
+    z-index: 1  ;
+  }
+  

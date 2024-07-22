@@ -1,0 +1,16 @@
+<div class="pagination">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">
+    Anterior
+  </button>
+  <span>Página {{ currentPage }} de {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+    Siguiente
+  </button>
+</div>
+
+<div class="anime-cards">
+  <app-card-anime
+    *ngFor="let anime of paginatedAnimes"
+    [anime]="anime"
+  ></app-card-anime>
+</div>
